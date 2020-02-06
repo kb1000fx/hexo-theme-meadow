@@ -1,0 +1,105 @@
+/* ReadMore 阅读更多按钮*/
+.post-readmore{
+    color: black;
+    border: 2px solid #4CAF50;
+    &:hover {
+    background-color: #4CAF50;
+    color: white;
+    }
+}
+
+/*Post Header*/
+.post-header{
+    text-align:center;
+    position: relative;
+    padding: 24px 16px 16px 16px;
+}
+
+.post-header-title {
+    text-decoration: none;
+    display: block;
+    font-size: 24px;
+    line-height: 36px;
+    opacity: .87;
+    &:visited, &:link {
+        color: unset
+    }
+}
+
+.post-header-meta{
+    display: block;
+    font-size: 14px;
+    line-height: 24px;
+    opacity: .54;
+    &>span+span::before{
+        content: "|";
+        margin: 0 0.5em;
+    }
+    &>span>i{
+        margin: 0 0.5em 0 0;
+    }
+    & a:visited, & a:link {
+        color: unset
+    }
+}
+
+/*Post Tags*/
+.post-tags {
+    display:inline-flex;
+    position: relative; 
+    left: -20px;
+    height: 0;
+    font-weight: bold;
+    color: #fff;
+    border: 15px solid #009688;
+    border-right-color: transparent;
+    box-shadow: 0 5px 5px -5px #000;
+    margin: 5px 0 5px 0;
+    &>i{
+        align-self: center;
+        margin: 0 10px 0 0;
+        &>a{
+            text-decoration: none;
+            &:visited, &:link {
+                color: unset
+            }
+        }
+    }
+}
+
+/*Post Nav*/
+.post-nav-item{
+    padding: 10px 0 0 0;
+    width: 45%;
+    position: relative;
+    display: block;
+    line-height: 25px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: none;
+    text-decoration: none;
+    &:hover {
+        color: #222;
+        border-bottom: none;
+    }
+    &:active {
+        top: 2px;
+    }
+    &.mdui-float-left{
+        text-align: left;
+        padding-left: 5px;
+    }
+    &.mdui-float-right{
+        text-align: right;
+        padding-right: 5px;
+    }
+    &.mdui-float-right .fa{
+        font-size: 12px;
+        margin-right: 5px;
+    }
+    &.mdui-float-left .fa{
+        font-size: 12px;
+        margin-left: 5px;
+    }
+}
+

@@ -1,0 +1,53 @@
+/*Color Var 颜色变量*/
+//背景颜色
+background-body = #d4dcd6//#e9e7ef //#d4dcd6
+background-card = #fff
+
+/*Background Color 背景颜色*/
+body{
+  background: background-body;
+}
+
+.mdui-card{
+  background: background-card;
+}
+
+/* Paginator Style 底部导航栏*/
+.pagination {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  & a, & span {
+  transition: background-color .3s;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  }
+  & .current {
+  background-color: #4CAF50;
+  color: white;
+  }
+  & a:hover:not(.current) {
+    background-color: #ddd;
+  }
+}
+
+
+
+@import "_partial/highlight"
+@import "_partial/post"
+@import "_partial/page"
+@import "_partial/sidebar"
+
+#main-contain{
+  //height: 800px;
+  //min-height: 100%
+  
+}
+
+.mdui-card.mdui-p-a-2.mdui-m-b-5{
+    //width: 85%;
+    margin: 0 auto;
+    
+}

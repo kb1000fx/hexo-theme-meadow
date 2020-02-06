@@ -1,0 +1,121 @@
+# 不蒜子计数
+busuanzi:
+  site: true
+  page: true
+  busuanzi_js: http://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+
+# 文末结束语
+passage_end_tag:
+  enabled: true
+  text: --- 本文结束 <i class="fa fa-heartbeat"></i> The End ---
+
+# Google Adsense广告代码
+google_adsense:
+  enabled: true
+  footer: ../_adsense/footer.ejs
+  sidebar: ../_adsense/sidebar.ejs
+
+
+# 使用Mathjax渲染数学公式
+mathjax:
+  enabled: true
+
+# 自动生成的摘要长度
+# 建议文章中手动使用 <!--more--> 效果更佳
+excerpt_length: 150
+
+# 主题颜色
+theme_color:
+  primary: blue-grey #teal
+  accent: blue
+
+# 菜单
+menu:
+  home: / || home
+  #about: /about/ || user
+  tags: /tags/ || bookmark
+  categories: /categories/ || folder
+  archives: /archives/ || archive
+  抽象话转换器: /NMSL/ || attach_money
+  sitemap: /sitemap.xml || map
+  #resources: /resources || download
+
+# 头像
+avatar: /images/avatar.jpg
+
+# 页脚
+footer:
+  since: 2015
+  footer_text:
+  license:
+
+# 页面    
+page:
+  tag_count: true
+
+
+
+
+favicon: /images/favicon.png
+banner: /images/banner.png
+
+
+email:
+
+open_graph:
+  twitter:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+site_verification:
+  google:
+  baidu:
+analytics:
+  google_site_id:
+  baidu_site_id:
+  cnzz_site_id:
+
+pages:
+- name: 标签云
+  link: /tagcloud
+- name: 画廊
+  link: /gallery
+links:
+
+
+
+gallery:
+  fancybox_css: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css
+  fancybox_js: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js
+  jquery_js: https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js
+  lazyload_js: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
+
+qrcode:
+  caption: 发送到手机
+  use: online
+donate:
+search:
+  placeholder: 请输入关键字
+  path: /search.xml
+  use: plugin
+comment:
+  use: false
+  disqus_shortname:
+  gitalk_client_id:
+  gitalk_client_secret:
+  gitalk_repo:
+  gitalk_owner:
+  gitalk_sid_type:
+  livere_data_uid:
+  valine_leancloud_app_id:
+  valine_leancloud_app_key:
+  valine_placeholder:
+  valine_page_size:
+  valine_avatar:
+  valine_lang:
+  valine_guest_info:
+  valine_notify:
+  valine_verify:
+  changyan_app_id:
+  changyan_app_key:
+  changyan_sid_type:

@@ -1,0 +1,9 @@
+<% if (postpage.tags && postpage.tags.length) { %>
+    <div class="post-tags">
+      <% postpage.tags.data.forEach(function(element) { %>
+        <i class="fas fa-tag">
+          <a rel="tag" href = <%-url_for(element.path)%> ><%- element.name %></a>
+        </i>
+      <% }) %>
+    </div>
+<% } %>

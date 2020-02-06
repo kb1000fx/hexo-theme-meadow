@@ -1,0 +1,33 @@
+/*Sidebar 侧边栏*/
+#sidebar {
+    background-color: background-card
+}
+
+@media (min-width: 600px) {
+  #sidebartab {
+    width: calc((100% - 64px)/2);
+    max-width: 160px;
+    min-width: unset;
+  }
+}
+
+@media (min-width: 1024px) {
+  #sidebartab {
+    width: 110px;
+    max-width: none;
+    min-width: unset;
+  }
+}
+
+/*Sidebar Avatar 侧边栏头像*/
+.sidebar-avatar{
+    display: block;
+    margin:0 auto;
+    width: 60%;
+    &>img{  
+        width: auto;  
+        height: auto;  
+        max-width: 100%;  
+        max-height: 100%;     
+    } 
+}

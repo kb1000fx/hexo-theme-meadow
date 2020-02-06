@@ -1,0 +1,40 @@
+<aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">导航</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">站点概览</a>
+    </div>
+
+    <div id="sidebar-tab1" class="mdui-p-a-2">
+        <div class="mdui-list">
+            <% for(element in theme.menu){%>
+                <%var str = theme.menu[element].split(" || ")%>
+                <a href="<%- url_for(str[0]) %>" class="mdui-list-item mdui-ripple">
+                    <i class="mdui-list-item-icon mdui-icon material-icons"><%=str[1]%></i>
+                    <div class="mdui-list-item-content"><%= __(element) || element%></div>
+                </a>
+            <%}%>
+            <div class="mdui-list-item mdui-ripple">
+                <i class="mdui-list-item-icon mdui-icon material-icons">brightness_2</i>
+                <div class="mdui-list-item-content"><%=__('nightmode')%></div>
+                <label class="mdui-switch">
+                  <input type="checkbox"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    <div id="sidebar-tab2" class="mdui-p-a-2">
+        <div class="sidebar-avatar">
+            <img src="<%=theme.avatar%>"/>
+            <p style="text-align:center;"><%=config.author%></p>
+        </div>
+    </div>
+
+    <div class="mdui-divider"></div>
+
+    <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
+        <%- partial(theme.google_adsense.sidebar) %>
+    <% } %>
+    
+</aside>

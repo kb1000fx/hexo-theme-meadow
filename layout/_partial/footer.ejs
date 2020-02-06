@@ -1,0 +1,11 @@
+<footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
+  <div class="mdui-p-y-1 mdui-text-center">
+    Copyright &copy; <% if (theme.footer.since) { %><%= theme.footer.since %> - <% } %><%- date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
+    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a><% if (theme.footer_text) { %><%- theme.footer_text %><% } %>
+    <% if (theme.busuanzi.site) { %><br>
+      <span id="busuanzi_container_site_uv" style="display: none;"><i class="mdui-icon material-icons">&#xe7fd;</i> <span id="busuanzi_value_site_uv"></span></span>
+      <span id="busuanzi_container_site_pv" style="display: none;"><i class="mdui-icon material-icons">&#xe417;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
+      
+    <% } %>
+  </div>
+</footer>

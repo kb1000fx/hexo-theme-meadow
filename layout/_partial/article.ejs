@@ -1,0 +1,104 @@
+<article id="article" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+  <%# Mathjax %>
+  <% if (theme.mathjax.enabled == true) { %>
+    <%if (page.mathjax == true) {%>
+      <%- partial('../_plugin/math/mathjax') %>
+    <%}%>
+  <%}%>
+
+  <header class="mdui-card-media">
+    <%# Post Header %>
+    <% if (page.photos.length != 0) { %>
+      <% page.photos.forEach(function(element) { %>
+        <img src = <%= element %> >
+      <% }) %>
+      <div class="mdui-card-media-covered">
+        <%- partial('_partial/post/post-header',{postpage: page}) %>
+      </div>
+    <%} else {%>
+      <%- partial('_partial/post/post-header',{postpage: page}) %>
+    <%}%>
+      
+    <%#分享按钮%>
+    <div class="mdui-card-menu">
+      <% if (page.share_menu !== false) { %>
+        <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
+        <ul class="mdui-menu" id="share_menu">
+          <li class="mdui-menu-item">
+            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%- page.permalink %>&pic=<%- config.url + url_for(theme.favicon) %>&searchPic=false&style=simple" target="_blank" class="mdui-ripple"><%= __('share.weibo') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%- page.permalink %>&via=<%= config.author %>" target="_blank" class="mdui-ripple"><%= __('share.twitter') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.facebook') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="https://plus.google.com/share?url=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.google_plus') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- page.permalink %>&title=<%= page.title %>" target="_blank" class="mdui-ripple"><%= __('share.linkedin') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + url_for(theme.favicon) %>&url=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.qq') %></a>
+          </li>
+          <li class="mdui-menu-item">
+            <a href="https://telegram.me/share/url?url=<%- page.permalink %>&text=<%= page.title %>" target="_blank" class="mdui-ripple"><%= __('share.telegram') %></a>
+          </li>
+        </ul>
+      <% } %>
+    </div>
+  </header>
+
+  <%# 文章标签 %>
+  <%- partial('_partial/post/post-tag',{postpage: page}) %>
+
+  <div class="mdui-card-content mdui-typo">
+    <%- page.content %>
+  </div>
+  
+  <!--文末结束语-->
+  <% if (theme.passage_end_tag.enabled == true) { %>
+    <div style="text-align:center;color: #ccc;font-size:24px;"> <%- theme.passage_end_tag.text %> </div>
+  <% } %>
+  
+  <!--页脚广告-->
+  <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
+    <%- partial(theme.google_adsense.footer) %>
+  <% } %>
+  <br>
+
+  <div class="mdui-divider-inset"></div>
+
+  <%# 底部文章前后导航 %>
+  <nav >
+    <% if (page.prev) { %>
+      <a rel="prev" class="post-nav-item mdui-float-left" href="<%- url_for(page.prev.path) %>">
+        <i class="fa fa-chevron-left"></i>
+        <span><%- page.prev.title %></span>
+      </a>
+    <% } %>
+    <% if (page.next) { %>
+      <a rel="next" class="post-nav-item mdui-float-right" href="<%- url_for(page.next.path) %>">
+        <span><%- page.next.title %></span>
+        <i class="fa fa-chevron-right"></i>
+      </a>
+    <% } %>
+  </nav>
+</article>
+
+
+<% if (page.comments && theme.comment.use) { %>
+  <div id="comment" class="mdui-m-t-5">
+    <%- partial('_widget/comment/' + theme.comment.use) %>
+  </div>
+<% } %>
+<% var toc = toc(page.content, {class: 'toc', list_number: false}) %>
+<% if (is_post() && page.toc && toc.length) { %>
+  <div style="position: fixed !important; right: 16px; top: 30%;">
+    <button class="mdui-fab mdui-fab-mini mdui-ripple" mdui-menu="{target: '#toc'}"><i class="mdui-icon material-icons">format_list_numbered</i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item" disabled><%- toc %></li>
+    </ul>
+  </div>
+<% } %>

@@ -1,0 +1,31 @@
+<head>
+    <title><%- theme.title %></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <%# 浏览器升级提示  %>
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    <%# CSS引入  %>
+    <%- css(['css/mdui.css',  'css/main.css']) %>
+    <%- css('https://cdn.bootcss.com/font-awesome/5.11.2/css/all.min.css') %>
+    
+    <%
+        var title = page.title;
+        if (is_archive()) {
+            title = __('archive');
+            if (is_month()) {
+                title += ': ' + page.year + '/' + page.month;
+            } else if (is_year()) {
+                title += ': ' + page.year;
+            }
+        } else if (is_category()) {
+            title = __('category') + ': ' + page.category;
+        } else if (is_tag()) {
+            title = __('tag') + ': ' + page.tag;
+        }
+    %>
+    <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+</head>

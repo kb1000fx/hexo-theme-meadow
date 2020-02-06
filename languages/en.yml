@@ -1,0 +1,47 @@
+home: Home
+about: About
+tags: Tags
+categories: Categories
+archives: Archives
+sitemap: Sitemap
+resources: Resources
+nightmode: Night Mode
+more: Read More
+
+post:
+  posted: Posted on
+  edited: Edited on
+  in: In
+  views: Views
+prev: Prev
+next: Next
+permalink: "PermaLink: "
+
+counter:
+  tags:
+    zero: No tags
+    one: 1 tag in total
+    other: "%d tags in total"
+
+  categories:
+    zero: No categories
+    one: 1 category in total
+    other: "%d categories in total"
+
+  archives:
+    zero: No posts.
+    one: 1 post.
+    other: "%d posts in total."
+
+share:
+  weibo: Share to Weibo
+  twitter: Share to Twitter
+  facebook: Share to Facebook
+  google_plus: Share to Google+
+  linkedin: Share to LinkedIn
+  qq: Share to QQ
+  telegram: Share to Telegram
+donate: Donate
+
+
+  
