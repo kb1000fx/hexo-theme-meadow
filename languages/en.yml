@@ -7,16 +7,20 @@ sitemap: Sitemap
 resources: Resources
 nightmode: Night Mode
 more: Read More
+prev: Prev
+next: Next
+permalink: "PermaLink: "
 
 post:
   posted: Posted on
   edited: Edited on
   in: In
   views: Views
-prev: Prev
-next: Next
-permalink: "PermaLink: "
 
+sidebar:
+  overview: Overview
+  toc: Table of Contents
+  
 counter:
   tags:
     zero: No tags
@@ -41,7 +45,3 @@ share:
   linkedin: Share to LinkedIn
   qq: Share to QQ
   telegram: Share to Telegram
-donate: Donate
-
-
-  

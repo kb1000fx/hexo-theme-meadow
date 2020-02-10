@@ -1,19 +1,17 @@
-<%var title_year = '0'%>
+<%if(pagetype=='tag'){%>
+    <%var current_page = page.tag%>
+    <%var type_dic = 'tags'%>
+<%}else if(pagetype=='category'){%>
+    <%var current_page = page.category%>
+    <%var type_dic = 'categories'%>
+<%}%>
 
 <div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="page-describe">
-        <%=_p('counter.archives',site.posts.length)%>
-    </div>
     <div class="posts-collapse">
+        <div class="collection-title">
+            <h2><%=current_page%><small><%-__(type_dic)%></small></h2>
+        </div>
         <%page.posts.data.forEach(function(element) {%>
-            <%var item_year=date(element.date,'Y')%>
-            <%if(item_year != title_year){%>
-                <div class="collection-title">
-                    <a href="<%- url_for('/archives/' + item_year) %>"><h2><%=item_year%><small><%-__('archives')%></small></h2></a>
-                </div>
-                <%title_year = item_year%>
-            <%}%>
-
             <div class="collection-item">
                 <h3><a href="<%-url_for(page.path)%>"><%=element.title%></a></h3>
                 <time itemprop="dateCreated" datetime="2019-11-12T14:04:53+08:00" content="2019-11-12">

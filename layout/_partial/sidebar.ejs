@@ -1,9 +1,10 @@
 <aside id="sidebar" class="mdui-drawer">
     <div class="mdui-tab" mdui-tab>
         <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">导航</a>
-        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple"><%=__("sidebar.overview")%></a>
     </div>
 
+    <%# Tab 1 %>
     <div id="sidebar-tab1" class="mdui-p-a-2">
         <div class="mdui-list">
             <% for(element in theme.menu){%>
@@ -16,25 +17,40 @@
             <div class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">brightness_2</i>
                 <div class="mdui-list-item-content"><%=__('nightmode')%></div>
-                <label class="mdui-switch">
-                  <input type="checkbox"/>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
                   <i class="mdui-switch-icon"></i>
                 </label>
             </div>           
         </div>
     </div>
 
+    <%# Tab 2 %>
     <div id="sidebar-tab2" class="mdui-p-a-2">
         <div class="sidebar-avatar">
             <img src="<%=theme.avatar%>"/>
-            <p style="text-align:center;"><%=config.author%></p>
+            <p class="sidebar-author-name"><%=config.author%></p>
+            <p class="sidebar-description"><%=config.description%></p>
+        </div>
+
+        <div class="sidebar-links">
+            <% for(element in theme.social){%>
+                <%var str = theme.social[element].split(" || ")%>
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="<%=str[1]%>"></i></span>
+                    <a href="<%- url_for(str[0]) %>" class="mdui-chip-title"><%= __(element) || element%></a>
+                </div>
+            <%}%>
         </div>
     </div>
 
     <div class="mdui-divider"></div>
-
+    
+    <%#侧边栏广告%>
     <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
-        <%- partial(theme.google_adsense.sidebar) %>
+        <div class="adsense-contain">
+            <%- partial(theme.google_adsense.sidebar) %>
+        </div>
     <% } %>
     
 </aside>

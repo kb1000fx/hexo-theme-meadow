@@ -14,6 +14,7 @@ google_adsense:
   enabled: true
   footer: ../_adsense/footer.ejs
   sidebar: ../_adsense/sidebar.ejs
+  banner: ../_adsense/banner.ejs
 
 
 # 使用Mathjax渲染数学公式
@@ -40,8 +41,9 @@ menu:
   sitemap: /sitemap.xml || map
   #resources: /resources || download
 
-# 头像
+###
 avatar: /images/avatar.jpg
+favicon: /images/favicon.png
 
 # 页脚
 footer:
@@ -53,53 +55,9 @@ footer:
 page:
   tag_count: true
 
-
-
-
-favicon: /images/favicon.png
-banner: /images/banner.png
-
-
-email:
-
-open_graph:
-  twitter:
-  google_plus:
-  fb_admins:
-  fb_app_id:
-site_verification:
-  google:
-  baidu:
-analytics:
-  google_site_id:
-  baidu_site_id:
-  cnzz_site_id:
-
-pages:
-- name: 标签云
-  link: /tagcloud
-- name: 画廊
-  link: /gallery
-links:
-
-
-
-gallery:
-  fancybox_css: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.css
-  fancybox_js: https://cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js
-  jquery_js: https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js
-  lazyload_js: https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js
-
-qrcode:
-  caption: 发送到手机
-  use: online
-donate:
-search:
-  placeholder: 请输入关键字
-  path: /search.xml
-  use: plugin
+# 评论
 comment:
-  use: false
+  use: gitalk
   disqus_shortname:
   gitalk_client_id:
   gitalk_client_secret:
@@ -119,3 +77,40 @@ comment:
   changyan_app_id:
   changyan_app_key:
   changyan_sid_type:
+
+# 社交链接
+social:
+  GitHub: https://github.com/kb1000fx || fab fa-github
+  Steam: https://steamcommunity.com/profiles/76561198346798163 || fab fa-steam
+  E-Mail: mailto:kb1000fx@gmail.com || fas fa-envelope
+  #Weibo: https://weibo.com/yourname || weibo
+  #Google: https://plus.google.com/yourname || google
+  #Twitter: https://twitter.com/yourname || twitter
+  #FB Page: https://www.facebook.com/yourname || facebook
+  #VK Group: https://vk.com/yourname || vk
+  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
+  #YouTube: https://youtube.com/yourname || youtube
+  #Instagram: https://instagram.com/yourname || instagram
+  #Skype: skype:yourname?call|chat || skype
+
+
+email:
+
+open_graph:
+  twitter:
+  google_plus:
+  fb_admins:
+  fb_app_id:
+site_verification:
+  google:
+  baidu:
+analytics:
+  google_site_id:
+  baidu_site_id:
+  cnzz_site_id:
+
+search:
+  placeholder: 请输入关键字
+  path: /search.xml
+  use: plugin
+

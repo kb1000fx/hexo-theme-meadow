@@ -20,35 +20,15 @@
     <%}%>
       
     <%#分享按钮%>
-    <div class="mdui-card-menu">
-      <% if (page.share_menu !== false) { %>
-        <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="mdui-icon material-icons">share</i></button>
-        <ul class="mdui-menu" id="share_menu">
-          <li class="mdui-menu-item">
-            <a href="http://service.weibo.com/share/share.php?appkey=&title=<%= page.title %>&url=<%- page.permalink %>&pic=<%- config.url + url_for(theme.favicon) %>&searchPic=false&style=simple" target="_blank" class="mdui-ripple"><%= __('share.weibo') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="https://twitter.com/intent/tweet?text=<%= page.title %>&url=<%- page.permalink %>&via=<%= config.author %>" target="_blank" class="mdui-ripple"><%= __('share.twitter') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.facebook') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="https://plus.google.com/share?url=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.google_plus') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="https://www.linkedin.com/shareArticle?mini=true&url=<%- page.permalink %>&title=<%= page.title %>" target="_blank" class="mdui-ripple"><%= __('share.linkedin') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="http://connect.qq.com/widget/shareqq/index.html?site=<%= config.title %>&title=<%= page.title %>&summary=<%= config.description %>&pics=<%- config.url + url_for(theme.favicon) %>&url=<%- page.permalink %>" target="_blank" class="mdui-ripple"><%= __('share.qq') %></a>
-          </li>
-          <li class="mdui-menu-item">
-            <a href="https://telegram.me/share/url?url=<%- page.permalink %>&text=<%= page.title %>" target="_blank" class="mdui-ripple"><%= __('share.telegram') %></a>
-          </li>
-        </ul>
-      <% } %>
-    </div>
+    <%- partial('_partial/post/post-share',{postpage: page}) %>
   </header>
+
+  <%#页首广告%>
+  <% if (theme.google_adsense.enabled && theme.google_adsense.banner) { %>
+    <div class="adsense-contain">
+      <%- partial(theme.google_adsense.banner) %>
+    </div>
+  <% } %>
 
   <%# 文章标签 %>
   <%- partial('_partial/post/post-tag',{postpage: page}) %>
@@ -64,9 +44,10 @@
   
   <!--页脚广告-->
   <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
-    <%- partial(theme.google_adsense.footer) %>
+    <div class="adsense-contain">
+      <%- partial(theme.google_adsense.footer) %>
+    </div>
   <% } %>
-  <br>
 
   <div class="mdui-divider-inset"></div>
 
@@ -87,18 +68,24 @@
   </nav>
 </article>
 
+<%# TOC %>
+<% var toc = toc(page.content, {class: 'toc', list_number: true}) %>
+<% if (page.toc != false) { %>
+  <div class="toc-button">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="mdui-icon material-icons">format_list_numbered</i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="<%-url_for(page.path)%>" id="toc-header" class="mdui-ripple"><%=__("sidebar.toc")%></a>
 
-<% if (page.comments && theme.comment.use) { %>
-  <div id="comment" class="mdui-m-t-5">
-    <%- partial('_widget/comment/' + theme.comment.use) %>
+        <%- toc %>
+      </li>
+    </ul>
   </div>
 <% } %>
-<% var toc = toc(page.content, {class: 'toc', list_number: false}) %>
-<% if (is_post() && page.toc && toc.length) { %>
-  <div style="position: fixed !important; right: 16px; top: 30%;">
-    <button class="mdui-fab mdui-fab-mini mdui-ripple" mdui-menu="{target: '#toc'}"><i class="mdui-icon material-icons">format_list_numbered</i></button>
-    <ul class="mdui-menu" id="toc">
-      <li class="mdui-menu-item" disabled><%- toc %></li>
-    </ul>
+
+<%# 评论 %>
+<% if (page.comments && theme.comment.use) { %>
+  <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+    <%- partial('_plugin/comment/' + theme.comment.use) %>
   </div>
 <% } %>

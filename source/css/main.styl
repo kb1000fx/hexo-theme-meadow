@@ -4,8 +4,25 @@ background-body = #d4dcd6//#e9e7ef //#d4dcd6
 background-card = #fff
 
 /*Background Color 背景颜色*/
+
+/*Dark Mode*/
+.mdui-theme-layout-dark{
+  & #footer{
+    background: #212121;
+  }
+}
+
+html{
+  height: 100%;
+}
+
 body{
   background: background-body;
+  height: calc(100% - 64px);
+}
+
+main{
+  min-height: 75%
 }
 
 .mdui-card{
@@ -18,36 +35,31 @@ body{
   padding: 0;
   margin: 0;
   & a, & span {
-  transition: background-color .3s;
-  color: black;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 5px;
+    transition: background-color .3s;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    &:visited, &:link {
+      color: unset;
+    }
   }
   & .current {
-  background-color: #4CAF50;
-  color: white;
+    background-color: #4CAF50;
+    color: white;
   }
   & a:hover:not(.current) {
     background-color: #ddd;
   }
 }
 
+/*Google Adsense*/
+.adsense-contain{
+  margin: 10px;
+}
 
 
 @import "_partial/highlight"
 @import "_partial/post"
 @import "_partial/page"
 @import "_partial/sidebar"
-
-#main-contain{
-  //height: 800px;
-  //min-height: 100%
-  
-}
-
-.mdui-card.mdui-p-a-2.mdui-m-b-5{
-    //width: 85%;
-    margin: 0 auto;
-    
-}
+@import "_partial/search"
