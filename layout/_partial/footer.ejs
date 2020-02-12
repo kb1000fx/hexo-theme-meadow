@@ -1,11 +1,30 @@
-<footer id="footer" class="mdui-m-t-5 mdui-p-y-3 mdui-color-theme">
-  <div class="mdui-p-y-1 mdui-text-center">
-    Copyright &copy; <% if (theme.footer.since) { %><%= theme.footer.since %> - <% } %><%- date(new Date(), 'YYYY') %> <%= config.author || config.title %><br>
-    Powered by <a href="https://hexo.io/" target="_blank" class="mdui-text-color-theme-accent">Hexo</a><% if (theme.footer_text) { %><%- theme.footer_text %><% } %>
-    <% if (theme.busuanzi.site) { %><br>
-      <span id="busuanzi_container_site_uv" style="display: none;"><i class="mdui-icon material-icons">&#xe7fd;</i> <span id="busuanzi_value_site_uv"></span></span>
-      <span id="busuanzi_container_site_pv" style="display: none;"><i class="mdui-icon material-icons">&#xe417;</i> <span id="busuanzi_value_site_pv"></span></span> &nbsp;&nbsp;
-      
+<footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="footer-line">
+    <%if(theme.footer.beian.enable == true){%>
+      <a href="http://www.beian.miit.gov.cn" rel="noopener" target="_blank"><%= theme.footer.beian.icp %></a>
+    <%}%>
+    <span>
+      &copy; <% if (theme.footer.since) { %><%= theme.footer.since %> - <% } %><%- date(new Date(), 'YYYY') %> 
+      <%if(theme.footer.icon.enabled){%>
+        <i style="color:<%=theme.footer.icon.color%>" class="<%=theme.footer.icon.name%>"></i>
+      <%}%>
+      <%= config.author || config.title %>
+    </span>
+  </div>
+
+    
+  <div class="footer-line">
+    <%if(theme.footer.powered == true){%>
+      <span><%=_p('footer.powered','Hexo') %></span>
+    <%}%>
+    <%if(theme.footer.theme == true){%>
+      <span><%=__('footer.theme') %> Meadow</span>
+    <%}%>
+  </div>  
+  <div class="footer-line">
+    <% if (theme.busuanzi.site) { %>
+      <span id="busuanzi_container_site_uv" style="display: none;"> <i class="mdui-icon material-icons">person</i><%=__('footer.total_visitors')%> <span id="busuanzi_value_site_uv"></span></span>
+      <span id="busuanzi_container_site_pv" style="display: none;"> <i class="mdui-icon material-icons">remove_red_eye</i><%=__('footer.total_views')%> <span id="busuanzi_value_site_pv"></span></span>
     <% } %>
   </div>
 </footer>

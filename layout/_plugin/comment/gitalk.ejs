@@ -1,6 +1,7 @@
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
 <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
 <script>
   var gitalk = new Gitalk({
     clientID: '<%= theme.comment.gitalk_client_id %>',
@@ -8,8 +9,10 @@
     repo: '<%= theme.comment.gitalk_repo %>',
     owner: '<%= theme.comment.gitalk_owner %>',
     admin: ['<%= theme.comment.gitalk_owner %>'],
-    id: '<%= page[theme.comment.gitalk_sid_type] %>' || location.pathname,
-    distractionFreeMode: false
+    id:  md5(location.pathname) ,
+    distractionFreeMode: '<%= theme.comment.gitalk_distractionFreeMode %>',
   });
   gitalk.render('gitalk-container');
+  console.log(location.pathname)
 </script>
+    <%#= page[theme.comment.gitalk_sid_type] %>

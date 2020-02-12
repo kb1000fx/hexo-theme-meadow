@@ -119,8 +119,6 @@
     }
 }
 
-
-
 /*Page Describe 页面描述*/
 .page-describe{
     text-align: center;
@@ -159,8 +157,17 @@
     }
 }
 
-
-
-
-
-
+/*Footer 页脚*/
+.footer-line{
+    display: block;
+    margin: 5px 0;
+    & a {
+        &:visited, &:link {
+            color: unset;
+        }
+    }
+    & span + span::before  {
+        content: '|'
+        margin: 5px;
+    }
+}

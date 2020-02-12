@@ -13,6 +13,13 @@
       <i class="fa fa-folder"></i>
       <%=__('post.in')%>:&nbsp;<%- list_categories(postpage.categories, {show_count: false, style: 'none', separator: ' > '}) %>
     </span>
+    <%if(busuanzi && theme.busuanzi.site){%>
+      <span>
+        <i class="fa fa-eye"></i>
+        <%=__('post.views')%>:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    <%}%>
   </div>
 </div>   
     

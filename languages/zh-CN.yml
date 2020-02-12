@@ -17,9 +17,16 @@ post:
   in: 分类于
   views: 阅读次数
 
+footer:
+  powered: "由 %s 强力驱动"
+  theme: 主题
+  total_views: 总访问量
+  total_visitors: 总访客量
+
 sidebar:
   overview: 站点概览
   toc: 文章目录
+  about: 关于
 
 counter:
   tags:

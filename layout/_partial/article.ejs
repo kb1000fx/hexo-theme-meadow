@@ -1,11 +1,7 @@
 <article id="article" class="mdui-card mdui-p-a-2 mdui-m-b-5">
-  <%# Mathjax %>
-  <% if (theme.mathjax.enabled == true) { %>
-    <%if (page.mathjax == true) {%>
-      <%- partial('../_plugin/math/mathjax') %>
-    <%}%>
-  <%}%>
 
+  <%- partial('_plugin/math/mathjax') %>
+  
   <header class="mdui-card-media">
     <%# Post Header %>
     <% if (page.photos.length != 0) { %>
@@ -13,14 +9,14 @@
         <img src = <%= element %> >
       <% }) %>
       <div class="mdui-card-media-covered">
-        <%- partial('_partial/post/post-header',{postpage: page}) %>
+        <%- partial('_partial/post/post-header',{postpage: page, busuanzi: true}) %>
       </div>
     <%} else {%>
-      <%- partial('_partial/post/post-header',{postpage: page}) %>
+      <%- partial('_partial/post/post-header',{postpage: page, busuanzi: true}) %>
     <%}%>
       
     <%#分享按钮%>
-    <%- partial('_partial/post/post-share',{postpage: page}) %>
+    <%- partial('_partial/post/post-share') %>
   </header>
 
   <%#页首广告%>
@@ -52,7 +48,7 @@
   <div class="mdui-divider-inset"></div>
 
   <%# 底部文章前后导航 %>
-  <nav >
+  <nav>
     <% if (page.prev) { %>
       <a rel="prev" class="post-nav-item mdui-float-left" href="<%- url_for(page.prev.path) %>">
         <i class="fa fa-chevron-left"></i>
@@ -76,7 +72,6 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="<%-url_for(page.path)%>" id="toc-header" class="mdui-ripple"><%=__("sidebar.toc")%></a>
-
         <%- toc %>
       </li>
     </ul>

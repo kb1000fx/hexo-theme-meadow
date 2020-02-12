@@ -136,5 +136,3 @@ $$(function () {
   var resource = $$('.search-result').attr('data-resource');
   if (resource) searchFunc(resource, '.search-form-input', '.search-result');
 });
-
-
