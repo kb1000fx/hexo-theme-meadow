@@ -1,7 +1,4 @@
 <article id="article" class="mdui-card mdui-p-a-2 mdui-m-b-5">
-
-  <%- partial('_plugin/math/mathjax') %>
-  
   <header class="mdui-card-media">
     <%# Post Header %>
     <% if (page.photos.length != 0) { %>
@@ -14,39 +11,32 @@
     <%} else {%>
       <%- partial('_partial/post/post-header',{postpage: page, busuanzi: true}) %>
     <%}%>
-      
     <%#分享按钮%>
     <%- partial('_partial/post/post-share') %>
   </header>
-
   <%#页首广告%>
   <% if (theme.google_adsense.enabled && theme.google_adsense.banner) { %>
     <div class="adsense-contain">
       <%- partial(theme.google_adsense.banner) %>
     </div>
   <% } %>
-
   <%# 文章标签 %>
   <%- partial('_partial/post/post-tag',{postpage: page}) %>
-
+  <%# 正文 %>
   <div class="mdui-card-content mdui-typo">
     <%- page.content %>
   </div>
-  
   <!--文末结束语-->
   <% if (theme.passage_end_tag.enabled == true) { %>
     <div style="text-align:center;color: #ccc;font-size:24px;"> <%- theme.passage_end_tag.text %> </div>
   <% } %>
-  
   <!--页脚广告-->
   <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
     <div class="adsense-contain">
       <%- partial(theme.google_adsense.footer) %>
     </div>
   <% } %>
-
-  <div class="mdui-divider-inset"></div>
-
+  </br><div class="mdui-divider-inset"></div>
   <%# 底部文章前后导航 %>
   <nav>
     <% if (page.prev) { %>
@@ -78,9 +68,4 @@
   </div>
 <% } %>
 
-<%# 评论 %>
-<% if (page.comments && theme.comment.use) { %>
-  <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
-    <%- partial('_plugin/comment/' + theme.comment.use) %>
-  </div>
-<% } %>
+<%- partial('_plugin/comment/index') %>

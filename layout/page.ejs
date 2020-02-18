@@ -11,9 +11,5 @@
     <%}else{%>
         <%- page.content %>
     </div>
-    <% if (page.comments && theme.comment.use) { %>
-        <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
-            <%- partial('_plugin/comment/' + theme.comment.use) %>
-        </div>
-    <% } %>
+    <%- partial('_plugin/comment/index') %>
 <%}%>

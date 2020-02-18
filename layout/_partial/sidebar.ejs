@@ -27,12 +27,17 @@
 
     <%# Tab 2 %>
     <div id="sidebar-tab2" class="mdui-p-a-2">
-        <div class="sidebar-avatar">
-            <img src="<%=theme.avatar%>"/>
-            <p class="sidebar-author-name"><%=config.author%></p>
-            <p class="sidebar-description"><%=config.description%></p>
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                <%if(theme.avatar){%>
+                    <img src="<%=theme.avatar%>"/>
+                <%}else{%>
+                    <img src="/icons/avatar.gif"/>
+                <%}%>
+            </div>
+            <div class="sidebar-author-name"><%=config.author%></div>
+            <div class="sidebar-description"><%=config.description%></div>
         </div>
-
         <div class="sidebar-links">
             <% for(element in theme.social){%>
                 <%var str = theme.social[element].split(" || ")%>
@@ -43,14 +48,11 @@
             <%}%>
         </div>
     </div>
-
     <div class="mdui-divider"></div>
-    
     <%#侧边栏广告%>
     <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
         <div class="adsense-contain">
             <%- partial(theme.google_adsense.sidebar) %>
         </div>
     <% } %>
-    
 </aside>

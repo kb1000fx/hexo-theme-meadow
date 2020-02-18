@@ -1,8 +1,5 @@
-<%- partial('_plugin/math/mathjax') %>
-
 <% page.posts.each(function (post) { %>
-    <article class="mdui-card mdui-m-b-5 mdui-p-a-2 mdui-hoverable">
-      
+    <article class="mdui-card mdui-m-b-5 mdui-p-a-2 mdui-hoverable">    
       <%#文章标题图片%>
       <% if (post.photos.length != 0) { %>
         <div class="mdui-card-media">
@@ -16,7 +13,6 @@
       <% } else { %>
         <%- partial('_partial/post/post-header',{postpage: post, busuanzi: false}) %>
       <%}%>
-  
       <%# 摘要 %>
       <div class="mdui-card-content">
         <p class="post-abstract">
@@ -31,10 +27,7 @@
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="<%-url_for(post.path)%>"%>><%= __('more') %></a>
         </div>
       </div>
-
       <%- partial('_partial/post/post-tag',{postpage: post}) %>
-  
     </article>
 <% }); %>
-
 <%- partial('_partial/pagination') %>

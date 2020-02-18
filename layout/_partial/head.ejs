@@ -1,5 +1,4 @@
 <head>
-    <title><%- theme.title %></title>
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
@@ -8,10 +7,17 @@
     <meta name="force-rendering" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
-    <link rel="shortcut icon" href="<%=theme.favicon%>">
+    <%if(theme.favicon){%>
+        <link rel="shortcut icon" href="<%=theme.favicon%>">
+    <%}else{%>
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    <%}%>
+    
     <%# CSS引入  %>
-    <%- css(['css/mdui.css',  'css/main.css']) %>
+    <%- css(['css/mdui.min.css',  'css/main.css']) %>
     <%- css('//lib.baomitu.com/font-awesome/5.11.2/css/all.min.css') %>
+    <%# 加载js%>
+    <%- partial('_partial/load') %>
 
     <%
         var title = page.title;
@@ -27,6 +33,14 @@
         } else if (is_tag()) {
             title = __('tag') + ': ' + page.tag;
         }
+        title += " | " + config.title
     %>
-    <title><% if (title) { %><%= title %> | <% } %><%= config.title %></title>
+
+    <title>
+        <%if(page.title){%>
+            <%= title %>
+        <%}else{%>  
+            <%= config.title %>
+        <%}%>
+    </title>
 </head>

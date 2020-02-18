@@ -2,18 +2,20 @@
   <div id="toolbar" class="mdui-toolbar mdui-color-theme">
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
     <a href="<%- url_for() %>" class="mdui-typo-headline"><%= config.title %></a>
+    <a href="<%- url_for() %>" class="header-subtitle mdui-typo-headline"><%= config.subtitle %></a>
     <div class="mdui-toolbar-spacer"></div>
     <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '<%= __('search') %>'}"><i class="mdui-icon material-icons">search</i></a>
   </div>
 </header>
 
 <div class="mdui-dialog" id="search">
-  <% if (theme.search.use === 'plugin') { %>
+  <% if (theme.search.local) { %>
     <div class="search-form">
       <input type="search" class="search-form-input" placeholder="<%= theme.search.placeholder %>">
     </div>
     <div class="search-result" data-resource="<%- url_for(theme.search.path) %>"></div>
-  <% } else { %>
+  <% } 
+  else { %>
     <%- search_form({class: 'search-form', text: theme.search.placeholder, button: false}) %>
     <div class="search-result"></div>
   <% } %>

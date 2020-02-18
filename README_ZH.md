@@ -1,56 +1,46 @@
-# Meadow
-![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue)
-![Node.JS](https://img.shields.io/badge/node.js-6.0-brightgreen)
+# Meadow简介
+![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue) ![Node.JS](https://img.shields.io/badge/node.js-6.0-brightgreen)
 
-Meadow is a Material Designed Hexo theme based on MDUI.
-
+Meadow 是一款基于MDUI开发的，符合Material Designed的Hexo主题。
 [Demo](https://garybear.cn/)
-
-[中文文档](https://garybear.cn/t-4072/)
-
-## Installation
-**1. Change dir to Hexo root directory.**
+[Github](https://github.com/kb1000fx/hexo-theme-meadow)
+## 安装
+**1. 切换至Hexo根目录**
 ```
 $ cd hexo
 ```
-**2. Get theme from GitHub.**
-
-Download latest master branch
+**2.从GitHub获取主题**
+下载最新的master分支
 ```
 $ git clone https://github.com/kb1000fx/Meadow
 ```
-Or download release version from [Github Releases Page](https://github.com/kb1000fx/Meadow/releases)
+或从[Github Releases Page](https://github.com/kb1000fx/Meadow/releases)下载发行版本
 
-**3. Change theme**
-
-Edit `_config.yml` file in the `Site` folder and set theme to meadow
+**3. 切换主题**
+编辑站点根目录下的`_config.yml`文件，并将主题设为meadow
 ```
 theme: meadow
 ```
-## Deploy
-### Github Page
-Install [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
+## 部署
+### 部署至Github Page
+安装 [hexo-deployer-git](https://github.com/hexojs/hexo-deployer-git)
 ```
 $ npm install hexo-deployer-git --save
 ```
-
-Add the following configurations to `_config.yml` file in the `Site` folder:
+在站点目录的`_config.yml`文件中加入以下配置内容:
 ```YML
 deploy:
   type: git
   repo: https://github.com/<username>/<project>
   branch: <branch>
 ```
-
-Use `hexo g -d` to deploy
-
-### Tencent Cloud COS
-Install [hexo-deployer-cos](https://github.com/sdlzhd/hexo-deployer-cos)
+使用 `hexo g -d` 命令进行部署
+### 部署腾讯云COS
+安装 [hexo-deployer-cos](https://github.com/sdlzhd/hexo-deployer-cos)
 ```
 $ npm install hexo-deployer-cos --save
 ```
-
-Add the following configurations to `_config.yml` file in the `Site` folder:
+在站点目录的`_config.yml`文件中加入以下配置内容:
 ```YML
 deploy:
   type: cos
@@ -59,77 +49,76 @@ deploy:
   bucket: yourBucket
   region: yourRegion
 ```
+使用 `hexo g -d` 命令进行部署
+# 主题设置
+## 侧边栏目录
+### 标签页
+>添加一个包含站点内所有标签的标签页
 
-Use `hexo g -d` to deploy
-# Theme Setting
-## Sidebar Menu
-### Tags page
->Add a tags page contains all tags in your site.
-
-**1. Create a page named tags**
+**1. 创建标签页**
 ```
 $ hexo new page "tags"
 ```
-**2. Edit tags page**
+**2. 编辑标签页**
 
-Set page type to tags
+将类型设为tag
 ```
 title: All Tags
 date: 2020-02-02 20:00:02
 type: "tags"
 ```
-**3. Add tags to theme `_config.yml`**
+**3. 在主题的`_config.yml`文件中加入标签页**
 ```
 menu:
   ...
   ...
   tags: /tags/ || bookmark
 ```
-### Categories page
->Add a categories page contains all categories in your site.
+### 分类页
+>添加一个包含站点内所有分类的分类页
 
-**1. Create a page named categories**
+**1. 创建分类页**
 ```
 $ hexo new page "categories"
 ```
-**2. Edit categories page**
+**2. 编辑分类页**
 
-Set page type to categories
+将类型设为categories
 ```
 title: All Categories
 date: 2020-02-02 20:00:02
 type: "categories"
 ```
-**3. Add categories to theme `_config.yml`**
+**3. 在主题的`_config.yml`文件中加入分类页**
 ```
 menu:
   ...
   ...
   categories: /categories/ || folder
 ```
-### Other Menu Items
-**Add siderbar menu item to theme `_config.yml` as shown, view [MDUI Doc](https://www.mdui.org/docs/material_icon) to check out icons**
+### 其他菜单项
+**如下所示在主题`_config.yml`文件中添加侧边栏菜单项 , 图标名称可参考[MDUI Doc](https://www.mdui.org/docs/material_icon)**
 ```
 menu:
   ...
   menu_item: ~path/ || icon_name
   ...
 ```
-## Social Link
-**Add social links to theme `_config.yml` as shown, view [MDUI Doc](https://www.mdui.org/docs/material_icon) to check out icons**
+## 社交链接
+**如下所示，在主题文件夹中的 `_config.yml` 文件中添加社交链接 , 图标名称可参考[MDUI Doc](https://www.mdui.org/docs/material_icon)**
 ```
 social:
   social_item: links_url || icon_name
 ```
-## Passage End Tag
-Edit `_config.yml` file in the `Theme` folder.
+## 本文结束标签
+编辑主题文件夹中的 `_config.yml` 文件
 ```
 passage_end_tag:
   enabled: true
   text: --- 本文结束 <i class="fa fa-heartbeat"></i> The End ---
 ```
-## Math
-Edit `_config.yml` file in the `Theme` folder.
+## 数学公式渲染
+编辑主题文件夹中的 `_config.yml` 文件
 ```yml
 math:
   enabled: true
@@ -142,21 +131,19 @@ math:
     auto_render: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js
 ```
 ### Mathjax
+将enabled设为true，并将engine设为mathjax
 
-Set enabled to true and engine to mathjax
-
-Add `mathjax: true` in Front-matter of the article you want to use mathjax.
+在你想要使用mathjax的文章的Front-matter中添加 `mathjax: true`
 
 ### Katex
-Set enabled to true and engine to katex 
+将enabled设为true，并将engine设为katex 
 
-Add `katex: true` in Front-matter of the article you want to use katex.
+在你想要使用katex的文章的Front-matter中添加 `katex: true`
 
-# Third-Party Setting
-## Comment Services
-Edit `comment` part of `_config.yml` file in the `Theme` folder.
-
-Set different values of `use` to select the comment service.
+# 第三方设置
+## 评论服务
+编辑主题目录下的 `_config.yml` 文件中的`comment` 部分
+通过设置`use`的值来选择启用的评论服务
 ```YAML
 comment:
   use: #OPTION：gitalk; disqus; livere; valine; changyan; false
@@ -188,8 +175,8 @@ comment:
   changyan_sid_type:
 ```
 
-## Busuanzi
-Edit `_config.yml` file in the `Theme` folder.
+## 不蒜子计数
+编辑主题目录下的 `_config.yml` 文件
 ```
 busuanzi:
   site: true
@@ -198,9 +185,9 @@ busuanzi:
 ```
 
 ## Google Adsense
-Edit files in `~hexo/themes/meadow/layout/_adsense` and add your Google Adsense Code.
+编辑`~hexo/themes/meadow/layout/_adsense`中的文件并加入你的Google Adsense代码
 
-Edit `_config.yml` file in the `Theme` folder to set google_adsense path.
+编辑主题目录下的 `_config.yml` 文件来设置Google Adsense文件路径
 ```
 google_adsense:
   enabled: true
@@ -209,8 +196,10 @@ google_adsense:
   banner: ../_adsense/banner.ejs
 ```
 
-## Analytics Services
-Edit `_config.yml` file in the `Theme` folder to set your Analytics Services.
+## 分析服务
+编辑主题目录下的 `_config.yml` 文件来设置你的分析服务
+
+>与评论服务不同的是，可以同时开启多个分析服务
 ```
 analytics:
   google_analytics:
@@ -221,41 +210,41 @@ analytics:
   tencent_site_id:
 ```
 
-# Plugin
+# 插件
 ## Abbrlink
 [Github: hexo-abbrlink](https://github.com/rozbo/hexo-abbrlink)
-### Install：
+### 安装：
 ``` bash
 npm install hexo-abbrlink --save
 ```
-### Use：
-Modify permalink in `_config.yml` file in the `Site` folder:
+### 用法：
+修改站点目录下`_config.yml`文件中的`permalink`部分:
 ```
 permalink: :abbrlink/
 ```
 
-## Sitemap
+## 站点地图
 [Github: hexo-generator-sitemap](https://github.com/hexojs/hexo-generator-sitemap)
-### Install:
+### 安装:
 ``` bash
 $ npm install hexo-generator-sitemap --save
 ```
-### Use:
-Modify sitemap configures in `_config.yml` file in the `Site` folder.
+### 用法:
+修改站点目录下`_config.yml`文件中的`sitemap`部分:
 ```
 sitemap:
   path: sitemap.xml
   template: ./sitemap_template.xml
   rel: false
 ```
-## Local Search
+## 本地搜索
 [Github: hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb)
-### Install
+### 安装
 ```
 $ npm install hexo-generator-searchdb
 ```
-### Use:
-Modify search configures in `_config.yml` file in the `Site` folder.
+### 用法
+修改站点目录下`_config.yml`文件中的`search`部分:
 ```
 search:
   path: search.xml
@@ -264,16 +253,11 @@ search:
   format: html
 ```
 
-Edit `_config.yml` file in the `Theme` folder.
+编辑主题目录下的 `_config.yml` 文件
 ```
 search:
   local: true
   path: /search.xml
   placeholder: 请输入关键字
 ```
-> If you set `local` to false, Meadow will use Google Search as the Site Search Service by default
-
-## Mermaid
-```
-npm install hexo-filter-mermaid-diagrams
-```
+> 如果你将 `local` 设为false, Meadow 将默认使用谷歌搜索作为站点搜索服务

@@ -13,8 +13,8 @@
         </div>
         <%page.posts.data.forEach(function(element) {%>
             <div class="collection-item">
-                <h3><a href="<%-url_for(page.path)%>"><%=element.title%></a></h3>
-                <time itemprop="dateCreated" datetime="2019-11-12T14:04:53+08:00" content="2019-11-12">
+                <h3><a href="<%-url_for(element.path)%>"><%=element.title%></a></h3>
+                <time itemprop="dateCreated" datetime=<%-date(element.date)%> >
                     <%-date(element.date,'Y.MM.D')%>
                 </time>
             </div>

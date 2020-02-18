@@ -1,14 +1,22 @@
 ###
-avatar: /images/avatar.jpg
-favicon: /images/favicon.png
-# 自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳
+avatar: 
+favicon: 
+#自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳
 excerpt_length: 300
+# 页面    
+page:
+  tag_count: true
+
+# 主题颜色
+theme_color:
+  primary: blue-grey 
+  accent: blue
 
 # 搜索
 search:
-  placeholder: 请输入关键字
+  local: true
   path: /search.xml
-  use: plugin
+  placeholder: 请输入关键字
 
 # 不蒜子计数
 busuanzi:
@@ -28,15 +36,16 @@ google_adsense:
   sidebar: ../_adsense/sidebar.ejs
   banner: ../_adsense/banner.ejs
 
-# 使用Mathjax渲染数学公式
-mathjax:
+# 数学公式渲染
+math:
   enabled: true
-  src: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-
-# 主题颜色
-theme_color:
-  primary: blue-grey #teal
-  accent: blue
+  engine: mathjax ##可选渲染引擎：mathjax、katex
+  mathjax:
+    cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  katex:
+    cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
+    cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
+    auto_render: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js
 
 # 菜单
 menu:
@@ -45,38 +54,30 @@ menu:
   tags: /tags/ || bookmark
   categories: /categories/ || folder
   archives: /archives/ || archive
-  抽象话转换器: /NMSL/ || attach_money
   sitemap: /sitemap.xml || map
-  #resources: /resources || download
 
 # 页脚
 footer:
-  since: 2015
-  # If not defined, `author` from Hexo main config will be used.
+  since: 
   powered: true
   theme: true
   beian:
     enable: true
-    icp: 苏ICP备18025778号
+    icp: 
   icon:
-    # Icon name in fontawesome, see: https://fontawesome.com/v4.7.0/icons/
-    # `heart` is recommended with animation in red (#ff0000).
+    # 图标名使用的是Font Awesome 5.11.2, 详见: https://fontawesome.com/
     enabled: true
     name: fas fa-heart
     color: "#d9333f"
-
-# 页面    
-page:
-  tag_count: true
 
 # 评论
 comment:
   use: gitalk
   ## Gitalk
-  gitalk_client_id: f3866882707e12e74c4a
-  gitalk_client_secret: 04a037afee00b94e4b55e474aa270ac136a8c952
-  gitalk_repo: kb1000fx.github.io
-  gitalk_owner: kb1000fx
+  gitalk_client_id: 
+  gitalk_client_secret: 
+  gitalk_repo: 
+  gitalk_owner: 
   gitalk_sid_type:
   gitalk_distractionFreeMode: true
   ## Disqus
@@ -100,10 +101,10 @@ comment:
 
 # 社交链接
 social:
+  E-Mail: mailto:kb1000fx@gmail.com || fas fa-envelope
   GitHub: https://github.com/kb1000fx || fab fa-github
   Steam: https://steamcommunity.com/profiles/76561198346798163 || fab fa-steam
-  E-Mail: mailto:kb1000fx@gmail.com || fas fa-envelope
-  #Weibo: https://weibo.com/yourname || weibo
+  Weibo: https://weibo.com/kb1000fx || fab fa-weibo
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
@@ -113,15 +114,11 @@ social:
   #Instagram: https://instagram.com/yourname || instagram
   #Skype: skype:yourname?call|chat || skype
 
-open_graph:
-  twitter:
-  google_plus:
-  fb_admins:
-  fb_app_id:
-site_verification:
-  google:
-  baidu:
+# 分析
 analytics:
-  google_site_id:
+  google_analytics:
+    tracking_id: 
+    localhost_ignored: true
   baidu_site_id:
   cnzz_site_id:
+  tencent_site_id:

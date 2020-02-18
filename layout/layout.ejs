@@ -12,9 +12,7 @@
     <%- partial('_partial/footer') %>
     <%# 返回顶部按钮 %>
     <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal"><i class="mdui-icon material-icons">arrow_upward</i></button>
-    <%# 不蒜子计数 %>
-    <% if (theme.busuanzi.site || theme.busuanzi.page) { %><script async src="<%- theme.busuanzi.busuanzi_js %>"></script><% } %>
     <%# JS引入 %>
-    <%- js(['js/mdui.js', 'js/meadow.js']) %>
+    <%- js(['js/mdui.min.js', 'js/meadow.js']) %>
 </body>
 </html >
