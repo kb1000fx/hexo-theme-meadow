@@ -25,6 +25,7 @@ $$(function () {
 if (localStorage.getItem('mdui-theme-layout-dark')=='true') {
   $$('body').addClass('mdui-theme-layout-dark');
   $$('#footer').removeClass('mdui-color-theme');
+  $$('#nightmode_switch').prop('checked', true);
 }
 $$('#nightmode_switch').on('click', function (e) {
   if ($$('body').hasClass('mdui-theme-layout-dark')) {
