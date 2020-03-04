@@ -1,10 +1,19 @@
 /*Color Var 颜色变量*/
 //背景颜色
-background-body = #d4dcd6//#e9e7ef //#d4dcd6
+background-body = #d4dcd6
 background-card = #fff
 //辅助色
 primary-accent-color = #009688
 sub-accent-color = #4CAF50
+
+/*Background Color 背景颜色*/
+body{
+  background: background-body;
+}
+
+.mdui-card{
+  background: background-card;
+}
 
 /*Dark Mode*/
 .mdui-theme-layout-dark{
@@ -13,23 +22,36 @@ sub-accent-color = #4CAF50
   }
 }
 
-/*Background Color 背景颜色*/
+/* 页脚位置响应 */
 html{
-  height: 100%;
+  height:100%;
 }
 
-body{
-  background: background-body;
-  height: calc(100% - 64px);
+@media screen and (min-width:1024px) {
+  body{
+    height: calc(100% - 64px);
+  }
+  main{
+    min-height: calc(100% - 40px - 166px);
+  }
+}
+@media screen and (min-width:600px) and (max-width:1023px) {
+  body{
+    height: calc(100% - 64px);
+  }
+  main{
+    min-height: calc(100% - 40px - 164px);
+  }
+}
+@media screen and (max-width:599px) {
+  body{
+    height: calc(100% - 56px);
+  }
+  main{
+    min-height: calc(100% - 40px - 164px);
+  }
 }
 
-main{
-  min-height: 75%
-}
-
-.mdui-card{
-  background: background-card;
-}
 
 /* Paginator Style 底部导航栏*/
 .pagination {
@@ -53,12 +75,6 @@ main{
     background-color: #ddd;
   }
 }
-
-/*Google Adsense*/
-.adsense-contain{
-  margin: 10px;
-}
-
 
 @import "_partial/highlight"
 @import "_partial/post"
