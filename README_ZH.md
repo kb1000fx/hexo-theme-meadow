@@ -118,6 +118,7 @@ passage_end_tag:
   text: --- 本文结束 <i class="fa fa-heartbeat"></i> The End ---
 ```
 ## 数学公式渲染
+### 配置
 编辑主题文件夹中的 `_config.yml` 文件
 ```yml
 math:
@@ -139,6 +140,30 @@ math:
 将enabled设为true，并将engine设为katex 
 
 在你想要使用katex的文章的Front-matter中添加 `katex: true`
+
+> 我的博客中也有一些关于Mathjax和Katex的[用法备忘](https://garybear.cn/t-29708/#Latex)。
+
+## Mermaid
+### 配置
+编辑主题目录下的 `_config.yml` 文件
+```YML
+# mermaid 
+mermaid:
+  enable: true 
+  version: "8.4.0" 
+  startOnload: true  #default true
+  theme: 'default'    #default, forest, dark, neutral.
+```
+### 用法
+如下所示，将mermaid代码放在`<div class="mermaid">`和`</div>`标签之中:
+```HTML
+<div class="mermaid">
+  your mermaid code
+</div>
+```
+更多mermaid代码的用法详见[Github: mermaid](https://github.com/mermaid-js/mermaid)。
+
+或者我博客中的[备忘](https://garybear.cn/t-29708/#Mermaid)。
 
 # 第三方设置
 ## 评论服务
@@ -241,7 +266,7 @@ sitemap:
 [Github: hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb)
 ### 安装
 ```
-$ npm install hexo-generator-searchdb
+$ npm install hexo-generator-searchdb --save
 ```
 ### 用法
 修改站点目录下`_config.yml`文件中的`search`部分:

@@ -129,6 +129,7 @@ passage_end_tag:
   text: --- 本文结束 <i class="fa fa-heartbeat"></i> The End ---
 ```
 ## Math
+### Config
 Edit `_config.yml` file in the `Theme` folder.
 ```yml
 math:
@@ -146,11 +147,33 @@ math:
 Set enabled to true and engine to mathjax
 
 Add `mathjax: true` in Front-matter of the article you want to use mathjax.
-
 ### Katex
 Set enabled to true and engine to katex 
 
 Add `katex: true` in Front-matter of the article you want to use katex.
+> Here are some [memos (in Chinese)](https://garybear.cn/t-29708/#Latex) of the usages of Mathjax and Katex on my blog.
+
+## Mermaid
+### Config
+Edit `_config.yml` file in the `Theme` folder.
+```YML
+# mermaid 
+mermaid:
+  enable: true 
+  version: "8.4.0" 
+  startOnload: true  #default true
+  theme: 'default'    #default, forest, dark, neutral.
+```
+### Usage
+Insert your mermaid code between `<div>` tags with `mermaid` class as below:
+```HTML
+<div class="mermaid">
+  your mermaid code
+</div>
+```
+More grammars of mermaid code can be viewed in [Github: mermaid](https://github.com/mermaid-js/mermaid).
+
+Or the [memo (in Chinese)](https://garybear.cn/t-29708/#Mermaid) on my blog.
 
 # Third-Party Setting
 ## Comment Services
@@ -252,7 +275,7 @@ sitemap:
 [Github: hexo-generator-searchdb](https://github.com/theme-next/hexo-generator-searchdb)
 ### Install
 ```
-$ npm install hexo-generator-searchdb
+$ npm install hexo-generator-searchdb --save
 ```
 ### Use:
 Modify search configures in `_config.yml` file in the `Site` folder.
@@ -272,8 +295,3 @@ search:
   placeholder: 请输入关键字
 ```
 > If you set `local` to false, Meadow will use Google Search as the Site Search Service by default
-
-## Mermaid
-```
-npm install hexo-filter-mermaid-diagrams
-```
