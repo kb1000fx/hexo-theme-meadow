@@ -15,9 +15,9 @@
     <%- partial('_partial/post/post-share') %>
   </header>
   <%#页首广告%>
-  <% if (theme.google_adsense.enabled && theme.google_adsense.banner) { %>
+  <% if (theme.google_adsense.enabled && theme.google_adsense.banner_slot) { %>
     <div class="adsense-contain">
-      <%- partial(theme.google_adsense.banner) %>
+      <%- partial('_adsense/banner') %>
     </div>
   <% } %>
   <%# 文章标签 %>
@@ -31,9 +31,9 @@
     <div style="text-align:center;color: #ccc;font-size:24px;"> <%- theme.passage_end_tag.text %> </div>
   <% } %>
   <!--页脚广告-->
-  <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
+  <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot) { %>
     <div class="adsense-contain">
-      <%- partial(theme.google_adsense.footer) %>
+      <%- partial('_adsense/footer') %>
     </div>
   <% } %>
   </br><div class="mdui-divider-inset"></div>

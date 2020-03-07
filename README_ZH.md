@@ -126,6 +126,7 @@ math:
   engine: mathjax ##可选渲染引擎：mathjax、katex
   mathjax:
     cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mhchem: true
   katex:
     cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
     cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
@@ -133,6 +134,8 @@ math:
 ```
 ### Mathjax
 将enabled设为true，并将engine设为mathjax
+
+如果需要使用`mhchem`来书写化学方程式，请将其设为`true`
 
 在你想要使用mathjax的文章的Front-matter中添加 `mathjax: true`
 
@@ -210,15 +213,20 @@ busuanzi:
 ```
 
 ## Google Adsense
-编辑`~hexo/themes/meadow/layout/_adsense`中的文件并加入你的Google Adsense代码
+编辑主题目录下的 `_config.yml` 文件来设置Google Adsense. 其中Pub Id 和 Slot Id 可以在Adsense设置中找到.
 
-编辑主题目录下的 `_config.yml` 文件来设置Google Adsense文件路径
+主题中默认包含了 `sidebar`(抽屉侧边栏), `banner`(标题下方), `footer`(文章结尾) 这三个广告单元. 如果你想在其他位置设置广告单元可使用以下步骤: 
++ 在`~hexo/themes/meadow/layout/_adsense`路径下新建文件.
++ 在文件中插入你的Google Adsense代码.
++ 编辑EJS文件，在你想要加入广告的位置加入 `partial('_adsense/{YOUR_FILE_NAME}')`
 ```
 google_adsense:
   enabled: true
-  footer: ../_adsense/footer.ejs
-  sidebar: ../_adsense/sidebar.ejs
-  banner: ../_adsense/banner.ejs
+  auto_ad: true
+  pub_id: 
+  footer_slot: 
+  sidebar_slot: 
+  banner_slot:
 ```
 
 ## 分析服务

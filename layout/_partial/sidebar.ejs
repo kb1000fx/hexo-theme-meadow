@@ -50,9 +50,9 @@
     </div>
     <div class="mdui-divider"></div>
     <%#侧边栏广告%>
-    <% if (theme.google_adsense.enabled && theme.google_adsense.footer) { %>
+    <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot) { %>
         <div class="adsense-contain">
-            <%- partial(theme.google_adsense.sidebar) %>
+            <%- partial('_adsense/sidebar') %>
         </div>
     <% } %>
 </aside>

@@ -32,9 +32,11 @@ passage_end_tag:
 # Google Adsense广告代码
 google_adsense:
   enabled: true
-  footer: ../_adsense/footer.ejs
-  sidebar: ../_adsense/sidebar.ejs
-  banner: ../_adsense/banner.ejs
+  auto_ad: true
+  pub_id: 
+  footer_slot: 
+  sidebar_slot: 
+  banner_slot: 
 
 # 数学公式渲染
 math:
@@ -42,6 +44,7 @@ math:
   engine: mathjax ##可选渲染引擎：mathjax、katex
   mathjax:
     cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mhchem: true
   katex:
     cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
     cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js

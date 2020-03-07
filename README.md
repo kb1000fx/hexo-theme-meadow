@@ -137,6 +137,7 @@ math:
   engine: mathjax ##可选渲染引擎：mathjax、katex
   mathjax:
     cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    mhchem: true
   katex:
     cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
     cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
@@ -145,6 +146,8 @@ math:
 ### Mathjax
 
 Set enabled to true and engine to mathjax
+
+Set `mhchem` to `true` if you wanna use it to write chemical equations.
 
 Add `mathjax: true` in Front-matter of the article you want to use mathjax.
 ### Katex
@@ -221,15 +224,24 @@ busuanzi:
 ```
 
 ## Google Adsense
-Edit files in `~hexo/themes/meadow/layout/_adsense` and add your Google Adsense Code.
+Edit `_config.yml` file in the `Theme` folder to set google adsense.
 
-Edit `_config.yml` file in the `Theme` folder to set google_adsense path.
+Here are 3 Ads Units for default, which is `footer`, `sidebar`, `banner`. 
+
+Pub Id and Ads Slot Id can be found in your Google Adsense Settings.
+
+If your want to set more ads units on more positions: 
++ Add new files in path `~hexo/themes/meadow/layout/_adsense`.
++ Fill your Google Adsense Code in the new files.
++ Then add `partial('_adsense/{YOUR_FILE_NAME}')` to the EJS files at the positions you want.
 ```
 google_adsense:
   enabled: true
-  footer: ../_adsense/footer.ejs
-  sidebar: ../_adsense/sidebar.ejs
-  banner: ../_adsense/banner.ejs
+  auto_ad: true
+  pub_id: 
+  footer_slot: 
+  sidebar_slot: 
+  banner_slot:
 ```
 
 ## Analytics Services
