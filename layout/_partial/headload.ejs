@@ -1,6 +1,10 @@
 <%# Google Adsense Auto Ads %>
-<%if(theme.google_adsense.enabled && theme.google_adsense.auto_ad){%>
-    <script data-ad-client="ca-<%= theme.google_adsense.pub_id %>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<%if(theme.google_adsense.enabled){%>
+    <%if(theme.google_adsense.auto_ad){%>
+        <script data-ad-client="ca-<%= theme.google_adsense.pub_id %>" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <%}else{%>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <%}%>
 <%}%>
 <%# Google Analytics %>
 <%if(theme.analytics.google_analytics.tracking_id){%>
@@ -25,4 +29,3 @@
         <%- partial('_plugin/math/' + theme.math.engine) %>
     <%}%>      
 <%}%>
-    

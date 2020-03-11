@@ -7,18 +7,22 @@
     <meta name="force-rendering" content="webkit"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    <%# 字体预加载 %>
+    <%if(theme.preload){%>
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    <%}%>
+    <%# favicon %>
     <%if(theme.favicon){%>
         <link rel="shortcut icon" href="<%=theme.favicon%>">
     <%}else{%>
         <link rel="shortcut icon" href="/icons/favicon.ico">
     <%}%>
-    
     <%# CSS引入  %>
-    <%- css(['css/mdui.min.css',  'css/main.css']) %>
-    <%- css('//lib.baomitu.com/font-awesome/5.11.2/css/all.min.css') %>
-    <%# head加载js%>
+    <%- css(['css/mdui.min.css',  'css/main.css', 'css/iconfont.css']) %>
+    <%# head加载js %>
     <%- partial('_partial/headload') %>
-
+    <%# 题目 %>
     <%
         var title = page.title;
         if (is_archive()) {
@@ -35,7 +39,6 @@
         }
         title += " | " + config.title
     %>
-
     <title>
         <%if(page.title){%>
             <%= title %>

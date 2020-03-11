@@ -4,7 +4,7 @@
 <%}%>
 
 <%# Mermaid %>
-<% if (theme.mermaid.enable) { %>
+<% if (theme.mermaid.enable && is_post()) { %>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({
         startOnLoad: <%= theme.mermaid.startOnload %>,

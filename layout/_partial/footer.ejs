@@ -7,7 +7,7 @@
       <span>
         &copy; <% if (theme.footer.since) { %><%= theme.footer.since %> - <% } %><%- date(new Date(), 'YYYY') %> 
         <%if(theme.footer.icon.enabled){%>
-          <i style="color:<%=theme.footer.icon.color%>" class="<%=theme.footer.icon.name%>"></i>
+          <span style="color:<%=theme.footer.icon.color%>" class="iconfont <%=theme.footer.icon.name%>"></span>
         <%}%>
         <%= config.author || config.title %>
       </span>
@@ -29,10 +29,10 @@
     <div class="mdui-row">
       <% if (theme.busuanzi.site) { %>
         <div class="mdui-col-xs-6 mdui-text-right">
-          <span id="busuanzi_container_site_uv" style="display: none;"> <i class="mdui-icon material-icons">person</i><%=__('footer.total_visitors')%> <span id="busuanzi_value_site_uv"></span></span>
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span><%=__('footer.total_visitors')%> <span id="busuanzi_value_site_uv"></span></span>
         </div>
         <div class="mdui-col-xs-6 mdui-text-left">
-          <span id="busuanzi_container_site_pv" style="display: none;"> <i class="mdui-icon material-icons">remove_red_eye</i><%=__('footer.total_views')%> <span id="busuanzi_value_site_pv"></span></span>
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span><%=__('footer.total_views')%> <span id="busuanzi_value_site_pv"></span></span>
         </div>
       <% } %>
     </div>

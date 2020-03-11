@@ -4,13 +4,3 @@
 <!-- To automatically render math in text elements, include the auto-render extension: -->
 <script defer src="<%=theme.math.katex.auto_render%>" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
-<script>
-    renderMathInElement(document.body,
-        {
-            delimiters: [
-                {left: "$$", right: "$$", display: true},
-                {left: "$", right: "$", display: false}
-            ]
-        }
-    );
-</script>

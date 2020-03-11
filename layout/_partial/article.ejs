@@ -58,7 +58,7 @@
 <% var toc = toc(page.content, {class: 'toc', list_number: true}) %>
 <% if (page.toc != false) { %>
   <div class="toc-button">
-    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="mdui-icon material-icons">format_list_numbered</i></button>
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="<%-url_for(page.path)%>" id="toc-header" class="mdui-ripple"><%=__("sidebar.toc")%></a>

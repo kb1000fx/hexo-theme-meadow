@@ -10,12 +10,16 @@
             <% for(element in theme.menu){%>
                 <%var str = theme.menu[element].split(" || ")%>
                 <a href="<%- url_for(str[0]) %>" class="mdui-list-item mdui-ripple">
-                    <i class="mdui-list-item-icon mdui-icon material-icons"><%=str[1]%></i>
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont <%=str[1]%>"></i>
+                    </div>
                     <div class="mdui-list-item-content"><%= __(element) || element%></div>
                 </a>
             <%}%>
             <div class="mdui-list-item mdui-ripple">
-                <i class="mdui-list-item-icon mdui-icon material-icons">brightness_2</i>
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
                 <div class="mdui-list-item-content"><%=__('nightmode')%></div>
                 <label class="mdui-switch" id="darkmode">
                   <input type="checkbox" id="nightmode_switch"/>
@@ -42,7 +46,7 @@
             <% for(element in theme.social){%>
                 <%var str = theme.social[element].split(" || ")%>
                 <div class="mdui-chip">
-                    <span class="mdui-chip-icon"><i class="<%=str[1]%>"></i></span>
+                    <span class="mdui-chip-icon"><i class="iconfont <%=str[1]%>"></i></span>
                     <a href="<%- url_for(str[0]) %>" class="mdui-chip-title"><%= __(element) || element%></a>
                 </div>
             <%}%>

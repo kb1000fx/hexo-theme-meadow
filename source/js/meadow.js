@@ -123,17 +123,17 @@ var searchFunc = function (path, search_id, content_id) {
     }
   });
 };
-$$(function () {
-  var ele = $$('#search .search-form-input')[0];
-  $$('#search').on('opened.mdui.dialog', function (e) {
-    ele.focus();
-  });
-  $$(document).on('click', function (e) {
-    if ($$(e.target).closest('#search').length <= 0) {
-      $$('.search-form-input').val('');
-      $$('.search-result').html('');
-    }
-  });
+var isListenSearch = false;
+var listenSearchFunc = function () {
   var resource = $$('.search-result').attr('data-resource');
-  if (resource) searchFunc(resource, '.search-form-input', '.search-result');
-});
+  if (resource) {
+    if (!isListenSearch) { 
+      isListenSearch = true;
+      searchFunc(resource, '.search-form-input', '.search-result');
+    }
+  }
+};
+$$('#search').on('close.mdui.dialog',function () {
+  $$('.search-form-input').val('');
+  $$('.search-result').html('');
+})

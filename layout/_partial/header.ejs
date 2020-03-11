@@ -1,17 +1,17 @@
 <header class="mdui-appbar mdui-appbar-fixed">
   <div id="toolbar" class="mdui-toolbar mdui-color-theme">
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="mdui-icon material-icons">menu</i></a>
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
     <a href="<%- url_for() %>" class="mdui-typo-headline"><%= config.title %></a>
     <a href="<%- url_for() %>" class="header-subtitle mdui-typo-headline"><%= config.subtitle %></a>
     <div class="mdui-toolbar-spacer"></div>
-    <a href="javascript:;" class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '<%= __('search') %>'}"><i class="mdui-icon material-icons">search</i></a>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: '<%= __('search') %>'}"><i class="iconfont icon-search"></i></button>
   </div>
 </header>
 
 <div class="mdui-dialog" id="search">
   <% if (theme.search.local) { %>
     <div class="search-form">
-      <input type="search" class="search-form-input" placeholder="<%= theme.search.placeholder %>">
+      <input type="search" class="search-form-input" placeholder="<%= theme.search.placeholder %>" onfocus="listenSearchFunc()">
     </div>
     <div class="search-result" data-resource="<%- url_for(theme.search.path) %>"></div>
   <% } 

@@ -2,20 +2,20 @@
   <a class="post-header-title" href="<%-url_for(postpage.path)%>"><%=postpage.title%></a>
   <div class="post-header-meta">
     <span>
-      <i class="fa fa-calendar"></i>
+      <span class="iconfont icon-calendar"></span>
       <%=__('post.posted')%>:&nbsp;<%=date(postpage.date)%>
     </span>
     <span>
-      <i class="fa fa-calendar-check"></i>
+      <span class="iconfont icon-calendar-check"></span>
       <%=__('post.edited')%>:&nbsp;<%=date(postpage.updated)%>
     </span>
     <span>
-      <i class="fa fa-folder"></i>
+      <span class="iconfont icon-folder"></span>
       <%=__('post.in')%>:&nbsp;<%- list_categories(postpage.categories, {show_count: false, style: 'none', separator: ' > '}) %>
     </span>
     <%if(busuanzi && theme.busuanzi.site){%>
       <span>
-        <i class="fa fa-eye"></i>
+        <span class="iconfont icon-eye"></span>
         <%=__('post.views')%>:&nbsp;
         <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
       </span>

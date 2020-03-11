@@ -1,11 +1,9 @@
-###
+#####
 avatar: 
 favicon: 
-#自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳
-excerpt_length: 300
-# 页面    
-page:
-  tag_count: true
+preload: true #字体预加载
+excerpt_length: 300 #自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳  
+tag_page_count: true #Tag页是否计数
 
 # 主题颜色
 theme_color:
@@ -18,17 +16,6 @@ search:
   path: /search.xml
   placeholder: 请输入关键字
 
-# 不蒜子计数
-busuanzi:
-  site: true
-  page: true
-  busuanzi_js: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
-
-# 文末结束语
-passage_end_tag:
-  enabled: true
-  text: --- 本文结束 <i class="fa fa-heartbeat"></i> The End ---
-
 # Google Adsense广告代码
 google_adsense:
   enabled: true
@@ -37,6 +24,12 @@ google_adsense:
   footer_slot: 
   sidebar_slot: 
   banner_slot: 
+
+#####文章#####
+# 文末结束语
+passage_end_tag:
+  enabled: true
+  text: --- 本文结束 <i class="iconfont icon-heartbeat" style="font-size:24px;"></i> The End ---
 
 # 数学公式渲染
 math:
@@ -50,29 +43,57 @@ math:
     cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
     auto_render: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js
 
+# mermaid 
+mermaid:
+  enable: true 
+  version: "8.4.8" 
+  startOnload: true  #default true
+  theme: 'default'    #default, forest, dark, neutral.
+##########
+
+#####侧边栏#####
 # 菜单
 menu:
-  home: / || home
-  #about: /about/ || user
-  tags: /tags/ || bookmark
-  categories: /categories/ || folder
-  archives: /archives/ || archive
-  sitemap: /sitemap.xml || map
+  home: / || icon-home
+  #about: /about/ || icon-user
+  tags: /tags/ || icon-bookmark
+  categories: /categories/ || icon-folder
+  archives: /archives/ || icon-archive 
+  gallery: /categories/图集/ || icon-gallery
 
+# 社交链接
+social:
+  E-Mail: mailto:xxx@xxx.com || icon-mail
+  GitHub: https://your.url || icon-github
+  Steam: https://your.url || icon-steam
+  Weibo: https://your.url || icon-weibo
+  # 此外还预置了以下社交图标，可直接仿照格式进行引用，如需其他图标请自行添加图标库或与我联系
+  # icon-twitter、icon-facebook、icon-vk、icon-stack-overflow、icon-youtube、icon-Instagram、icon-skype
+  # icon-qq、icon-wechat、icon-alipay、icon-paypal、icon-telegram、icon-twitch、icon-discord
+##########
+
+#####页脚#####
 # 页脚
 footer:
-  since: 
+  since: 2015
   powered: true
   theme: true
   beian:
     enable: true
     icp: 
   icon:
-    # 图标名使用的是Font Awesome 5.11.2, 详见: https://fontawesome.com/
     enabled: true
-    name: fas fa-heart
+    name: icon-heart
     color: "#d9333f"
 
+# 不蒜子计数
+busuanzi:
+  site: true
+  page: true
+  busuanzi_js: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+##########
+
+#####第三方服务#####
 # 评论
 comment:
   use: gitalk
@@ -102,21 +123,6 @@ comment:
   changyan_app_key:
   changyan_sid_type:
 
-# 社交链接
-social:
-  E-Mail: mailto:kb1000fx@gmail.com || fas fa-envelope
-  GitHub: https://github.com/kb1000fx || fab fa-github
-  Steam: https://steamcommunity.com/profiles/76561198346798163 || fab fa-steam
-  Weibo: https://weibo.com/kb1000fx || fab fa-weibo
-  #Google: https://plus.google.com/yourname || google
-  #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
-  #VK Group: https://vk.com/yourname || vk
-  #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
-  #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
-  #Skype: skype:yourname?call|chat || skype
-
 # 分析
 analytics:
   google_analytics:
@@ -125,10 +131,4 @@ analytics:
   baidu_site_id:
   cnzz_site_id:
   tencent_site_id:
-
-# mermaid 
-mermaid:
-  enable: true 
-  version: "8.4.8" 
-  startOnload: true  #default true
-  theme: 'default'    #default, forest, dark, neutral.
+##########
