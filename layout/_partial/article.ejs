@@ -41,14 +41,14 @@
   <nav>
     <% if (page.prev) { %>
       <a rel="prev" class="post-nav-item mdui-float-left" href="<%- url_for(page.prev.path) %>">
-        <i class="fa fa-chevron-left"></i>
+        <i class="iconfont icon-angle-left"></i>
         <span><%- page.prev.title %></span>
       </a>
     <% } %>
     <% if (page.next) { %>
       <a rel="next" class="post-nav-item mdui-float-right" href="<%- url_for(page.next.path) %>">
         <span><%- page.next.title %></span>
-        <i class="fa fa-chevron-right"></i>
+        <i class="iconfont icon-angle-right"></i>
       </a>
     <% } %>
   </nav>

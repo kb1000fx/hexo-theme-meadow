@@ -27,28 +27,23 @@ html{
   height:100%;
 }
 
+main{
+  min-height: calc(100% - 2 * 40px - 75px - 1.5 * 32px);
+}
+
 @media screen and (min-width:1024px) {
   body{
     height: calc(100% - 64px);
-  }
-  main{
-    min-height: calc(100% - 40px - 166px);
   }
 }
 @media screen and (min-width:600px) and (max-width:1023px) {
   body{
     height: calc(100% - 64px);
   }
-  main{
-    min-height: calc(100% - 40px - 164px);
-  }
 }
 @media screen and (max-width:599px) {
   body{
     height: calc(100% - 56px);
-  }
-  main{
-    min-height: calc(100% - 40px - 164px);
   }
 }
 
