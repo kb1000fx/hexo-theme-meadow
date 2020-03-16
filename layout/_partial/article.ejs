@@ -1,4 +1,4 @@
-<article id="article" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+<article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
   <header class="mdui-card-media">
     <%# Post Header %>
     <% if (page.photos.length != 0) { %>
@@ -23,7 +23,7 @@
   <%# 文章标签 %>
   <%- partial('_partial/post/post-tag',{postpage: page}) %>
   <%# 正文 %>
-  <div class="mdui-card-content mdui-typo">
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
     <%- page.content %>
   </div>
   <!--文末结束语-->

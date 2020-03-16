@@ -1,5 +1,5 @@
 <% page.posts.each(function (post) { %>
-    <article class="mdui-card mdui-m-b-5 mdui-p-a-2 mdui-hoverable">    
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
       <%#文章标题图片%>
       <% if (post.photos.length != 0) { %>
         <div class="mdui-card-media">
@@ -13,8 +13,9 @@
       <% } else { %>
         <%- partial('_partial/post/post-header',{postpage: post, busuanzi: false}) %>
       <%}%>
+      <%- partial('_partial/post/post-tag',{postpage: post}) %>
       <%# 摘要 %>
-      <div class="mdui-card-content">
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <p class="post-abstract">
           <% if (post.excerpt) { %>
             <%- strip_html(post.excerpt) %>
@@ -27,7 +28,7 @@
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="<%-url_for(post.path)%>"%>><%= __('more') %></a>
         </div>
       </div>
-      <%- partial('_partial/post/post-tag',{postpage: post}) %>
+      <%#- partial('_partial/post/post-tag',{postpage: post}) %>
     </article>
 <% }); %>
 

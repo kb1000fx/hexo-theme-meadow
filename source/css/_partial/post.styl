@@ -12,7 +12,10 @@
 .post-header{
     text-align:center;
     position: relative;
-    padding: 24px 16px 16px 16px;
+    padding: 40px 16px 0px 16px;
+    .mdui-card-media-covered &{
+        padding: 24px;
+    }
     & .post-header-title {
         text-decoration: none;
         display: block;
@@ -45,7 +48,7 @@
 .post-tags {
     display:inline-flex;
     position: relative; 
-    left: -20px;
+    left: 0px;
     height: 0;
     font-weight: bold;
     color: #fff;
@@ -168,4 +171,13 @@
     & ol > ol {
         padding-left: 0;
     }
+}
+
+#achieve-abstract{
+    padding-bottom: 24px;
+    padding-top: 0px;
+}
+
+.tag-line-space{
+    padding: 15px; 
 }
