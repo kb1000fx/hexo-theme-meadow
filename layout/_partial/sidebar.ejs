@@ -51,7 +51,29 @@
                 </div>
             <%}%>
         </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content"><%= __('sidebar.links') %></div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    <% for(element in theme.links){%>
+                        <a href="<%= theme.links[element] %>" class="mdui-list-item mdui-ripple">
+                            <%= __(element) || element%>
+                        </a>
+                    <%}%>
+                </ul>
+            </li>
+        </ul>
+
     </div>
+
     <div class="mdui-divider"></div>
     <%#侧边栏广告%>
     <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot) { %>

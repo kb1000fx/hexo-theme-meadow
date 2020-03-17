@@ -70,6 +70,10 @@ social:
   # 此外还预置了以下社交图标，可直接仿照格式进行引用，如需其他图标请自行添加图标库或与我联系
   # icon-twitter、icon-facebook、icon-vk、icon-stack-overflow、icon-youtube、icon-Instagram、icon-skype
   # icon-qq、icon-wechat、icon-alipay、icon-paypal、icon-telegram、icon-twitch、icon-discord
+
+#友情链接
+links:
+  Meadow说明文档: https://garybear.cn/hexo-theme-meadow/
 ##########
 
 #####页脚#####
