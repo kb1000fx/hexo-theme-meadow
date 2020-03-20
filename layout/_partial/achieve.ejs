@@ -16,13 +16,13 @@
       <%- partial('_partial/post/post-tag',{postpage: post}) %>
       <%# 摘要 %>
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <p class="post-abstract">
+        <div class="post-abstract mdui-typo ">
           <% if (post.excerpt) { %>
-            <%- strip_html(post.excerpt) %>
+            <%- trim(post.excerpt) %>
           <% } else { %>
-            <%- truncate(strip_html(post.content), {length: theme.excerpt_length}) %>
+            <%- truncate(trim(post.content), {length: theme.excerpt_length}) %>
           <% } %>
-        </p>
+          </div>
         <%# 阅读更多%>
         <div style="text-align:center;">
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="<%-url_for(post.path)%>"%>><%= __('more') %></a>
