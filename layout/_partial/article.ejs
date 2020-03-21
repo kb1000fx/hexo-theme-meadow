@@ -57,7 +57,7 @@
 <%# TOC %>
 <% var toc = toc(page.content, {class: 'toc', list_number: true}) %>
 <% if (page.toc != false) { %>
-  <div class="toc-button">
+  <div class="toc-button"  style="z-index: 100;">
     <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
