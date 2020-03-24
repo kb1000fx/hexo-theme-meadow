@@ -100,7 +100,9 @@ busuanzi:
 #####第三方服务#####
 # 评论
 comment:
-  use: gitalk
+  use: 
+    - gitalk
+    - livere
   ## Gitalk
   gitalk_client_id: 
   gitalk_client_secret: 
