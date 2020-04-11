@@ -4,7 +4,7 @@ favicon:
 preload: true #字体预加载
 excerpt_length: 300 #自动生成的摘要长度 建议文章中手动使用 <!--more--> 效果更佳  
 tag_page_count: true #Tag页是否计数
-mourn_mode: false
+mourn_mode: false #哀悼模式
 
 # 主题颜色
 theme_color:

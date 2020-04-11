@@ -17,7 +17,7 @@
             <div class="collection-item">
                 <h3><a href="<%-url_for(element.path)%>"><%=element.title%></a></h3>
                 <time itemprop="dateCreated" datetime=<%-date(element.date)%> >
-                    <%-date(element.date,'Y.MM.D')%>
+                    <%-date(element.date,'Y.MM.DD')%>
                 </time>
             </div>
         <%})%>
