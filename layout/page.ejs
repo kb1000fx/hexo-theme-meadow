@@ -1,15 +1,17 @@
-<div class="mdui-card mdui-p-a-2 mdui-m-b-5">
+<div class="mdui-card mdui-p-b-2 mdui-m-b-5">
     <div class="post-header"> 
         <a class="post-header-title" href="<%-url_for(page.path)%>"><%=page.title%></a>
     </div>
-    <%if(page.type=='categories'){%>
-        <%- partial('_partial/page/categories') %>
-    </div>
-    <%}else if(page.type=='tags'){%>
-        <%- partial('_partial/page/tags') %>
-    </div>
-    <%}else{%>
-        <%- page.content %>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
+        <%if(page.type=='categories'){%>
+            <%- partial('_partial/page/categories') %>
+        </div>
+        <%}else if(page.type=='tags'){%>
+            <%- partial('_partial/page/tags') %>
+        </div>
+        <%}else{%>
+            <%- page.content %>
+        </div>
     </div>
     <%- partial('_plugin/comment/index') %>
 <%}%>

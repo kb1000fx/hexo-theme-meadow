@@ -8,7 +8,7 @@ mourn_mode: false #哀悼模式
 
 # 主题颜色
 theme_color:
-  primary: blue-grey 
+  primary: teal 
   accent: blue
 
 # 搜索
@@ -56,11 +56,12 @@ mermaid:
 # 菜单
 menu:
   home: / || icon-home
-  #about: /about/ || icon-user
   tags: /tags/ || icon-bookmark
   categories: /categories/ || icon-folder
   archives: /archives/ || icon-archive 
-  gallery: /categories/图集/ || icon-gallery
+  工具箱: /tools/ || icon-tools
+  about: /about/ || icon-user
+  #gallery: /categories/图集/ || icon-gallery
 
 # 社交链接
 social:
@@ -114,7 +115,7 @@ comment:
   ## Disqus
   disqus_shortname:
   ## Livere
-  livere_data_uid:
+  livere_data_uid: 
   ## Valine
   valine_leancloud_app_id:
   valine_leancloud_app_key:
