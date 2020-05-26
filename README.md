@@ -1,14 +1,20 @@
 # Meadow
 
-![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue)
+![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue) 
 ![Node.JS](https://img.shields.io/badge/node.js-6.0-brightgreen)
 
-Meadow is a Material Designed Hexo theme based on MDUI. Welcome to my [blog](https://garybear.cn/) for more information.
+Meadow是一款基于MDUI开发的，遵循Material Design的响应式Hexo主题。更多内容详见[我的博客](https://garybear.cn/)。
 
-Some useful links:
+下列是一些简单的说明文档与Demo：
 
-+ [Demo (My blog)](https://garybear.cn/)
++ [My Blog](https://kb1000fx.github.io/)
 
-+ [Doc](https://kb1000fx.github.io/hexo-theme-meadow/#/)
++ [Demo](https://kb1000fx.github.io/hexo-theme-meadow/)
 
-+ [中文文档](https://kb1000fx.github.io/hexo-theme-meadow/#/zh-CN/)
++ [Doc](https://kb1000fx.github.io/hexo-theme-meadow/doc/en)
+  
++ [中文文档](https://kb1000fx.github.io/hexo-theme-meadow/doc/)
+
+如有任何问题请发Github Issue，或通过邮箱kb1000fx@gmail.com与我联系。
+
+我的另一个主题(还在施工中): [Insulin](https://github.com/kb1000fx/hexo-theme-insulin)

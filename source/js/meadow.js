@@ -1,5 +1,4 @@
 var $$ = mdui.JQ;
-
 /* Gotop */
 $$(function () {
   $$(window).on('scroll', function (e) {

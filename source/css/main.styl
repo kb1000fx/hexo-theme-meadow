@@ -22,6 +22,14 @@ h2{
   font-size: 1.5em !important;
 }
 
+/*表格边框*/
+table{
+  border-collapse: collapse;
+}
+tr td,th{
+  border:1px solid #444;
+}
+
 /*Dark Mode*/
 .mdui-theme-layout-dark{
   & #footer{
@@ -86,6 +94,13 @@ main{
 //图标按钮
 .mdui-btn-icon .iconfont{
   font-size: 24px;
+}
+/*横向滚动条*/
+.math-fluid{
+  overflow-x: auto;
+}
+.mermaid{
+  overflow-x: auto;
 }
 
 @import "_partial/highlight"
