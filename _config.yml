@@ -19,8 +19,9 @@ search:
 
 # Google Adsense广告代码
 google_adsense:
-  enabled: true
-  auto_ad: true
+  enabled: true #开启广告
+  auto_ad: true #自动广告
+  page_ad: false  #单页启用广告
   pub_id: 
   footer_slot: 
   sidebar_slot: 
@@ -38,13 +39,13 @@ math:
   engine: mathjax ##可选渲染引擎：mathjax、katex
   mathjax:
     cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-    mhchem: true
+    mhchem: true  #化学式扩展
   katex:
     cdn_css: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css
     cdn_js: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js
     auto_render: https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js
 
-# mermaid 
+# mermaid图
 mermaid:
   enable: true 
   version: "8.4.8" 

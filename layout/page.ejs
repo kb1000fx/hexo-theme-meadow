@@ -10,7 +10,24 @@
             <%- partial('_partial/page/tags') %>
         </div>
         <%}else{%>
+            <%  if(typeof(page.ad) == "undefined") {
+                    var isPageAd = theme.google_adsense.page_ad;
+                } else { 
+                    var isPageAd = page.ad;
+                } 
+            %>
+            <% if (theme.google_adsense.enabled && theme.google_adsense.banner_slot && isPageAd) { %>
+                <div class="adsense-contain">
+                  <%- partial('_adsense/banner') %>
+                </div>
+            <% } %>
+            <%# 正文%>
             <%- page.content %>
+            <% if (theme.google_adsense.enabled && theme.google_adsense.footer_slot && isPageAd) { %>
+                <div class="adsense-contain">
+                  <%- partial('_adsense/footer') %>
+                </div>
+            <% } %>
         </div>
     </div>
     <%- partial('_plugin/comment/index') %>
