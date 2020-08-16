@@ -1,12 +1,13 @@
 /*Sidebar 侧边栏*/
 #sidebar {
   background-color: background-card
-  //禁用滚动条
-  overflow-y: hidden;
-  overflow-x: hidden;
+  overflow: hidden; //如需滚动条外置请删除此行与第81行
   & #sidebartab {
     width: 48%;
     min-width: unset;
+  }
+  &::-webkit-scrollbar {
+    display:none
   }
 }
 
@@ -73,4 +74,13 @@
 
 .mdui-chip .mdui-chip-icon .iconfont{
   font-size: 22px;
+}
+
+/*Links List*/
+#linksList {
+  overflow-y: auto; //如需滚动条外置请删除此行与第4行
+  max-height: calc(100vh - 414px);
+  &::-webkit-scrollbar {
+    display:none
+  }
 }

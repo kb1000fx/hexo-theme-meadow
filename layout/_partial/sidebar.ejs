@@ -62,7 +62,7 @@
                         <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
                     </div>
                 </div>
-                <ul class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
                     <% for(element in theme.links){%>
                         <a href="<%= theme.links[element] %>" class="mdui-list-item mdui-ripple">
                             <%= __(element) || element%>
@@ -71,7 +71,6 @@
                 </ul>
             </li>
         </ul>
-
     </div>
 
     <div class="mdui-divider"></div>
