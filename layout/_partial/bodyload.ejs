@@ -13,4 +13,12 @@
 <% } %>
 
 <%# JS引入 %>
-<%- js(['js/mdui.min.js', 'js/meadow.js']) %>
+<% if(page.mduiJSver == 'none'){%>
+    <% console.log("Please load MDUI JS manually!") %>
+<% } else if(page.mduiJSver == '0.4.3') {%>
+    <%- js(['js/mdui.min.v0.4.3.js']) %>
+<% } else {%>
+    <%- js(['js/mdui.min.v1.0.0.js']) %>
+<% } %>
+
+<%- js(['js/meadow.js']) %>

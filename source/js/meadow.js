@@ -1,4 +1,12 @@
-var $$ = mdui.JQ;
+/*MDUI JS Load*/
+if(typeof mdui.$ === "function"){
+  var $$ = mdui.$;
+} else if(typeof mdui.$ === "undefined"){
+  var $$ = mdui.JQ;
+} else {
+  console.error("MDUI JS Not Found!");
+};
+
 /* Gotop */
 $$(function () {
   $$(window).on('scroll', function (e) {
