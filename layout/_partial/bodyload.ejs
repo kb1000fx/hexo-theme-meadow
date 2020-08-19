@@ -14,7 +14,7 @@
 
 <%# JS引入 %>
 <% if(page.mduiJSver == 'none'){%>
-    <% console.log("Please load MDUI JS manually!") %>
+    <%# console.log("Please load MDUI JS manually!") %>
 <% } else if(page.mduiJSver == '0.4.3') {%>
     <%- js(['js/mdui.min.v0.4.3.js']) %>
 <% } else {%>
