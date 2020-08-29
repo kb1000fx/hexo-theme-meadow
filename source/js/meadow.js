@@ -52,7 +52,7 @@ var searchFunc = function (path, search_id, content_id) {
     url: path,
     dataType: 'xml',
     success: function (xmlResponse) {
-      var datas = $$(xmlResponse).find('entry').map(function () {
+      var datas = $$(xmlResponse).children('entry').map(function () {
         return {
           title: $$(this).find('title').text(),
           content: $$(this).find('content').text(),

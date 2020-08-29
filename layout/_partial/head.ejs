@@ -18,8 +18,15 @@
     <%}else{%>
         <link rel="shortcut icon" href="/icons/favicon.ico">
     <%}%>
+
     <%# CSS引入  %>
-    <%- css(['css/mdui.min.css',  'css/main.css', 'css/iconfont.css']) %>
+    <%if(page.mduiVer == '0.4.3') {%>
+        <%- css(['css/mdui.min.v0.4.3.css']) %>
+    <% } else {%>
+        <%- css(['css/mdui.min.v1.0.0.css']) %>
+    <% } %>
+    <%- css(['css/main.css', 'css/iconfont.css']) %>
+
     <%# head加载js %>
     <%- partial('_partial/headload') %>
     <%# 题目 %>
