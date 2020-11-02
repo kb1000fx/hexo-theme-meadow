@@ -7,12 +7,8 @@ Meadow is a Material Designed Hexo theme based on MDUI. Welcome to my [blog](htt
 
 Some useful links:
 
-+ [My Blog](https://kb1000fx.github.io/)
-
-+ [Demo](https://kb1000fx.github.io/hexo-theme-meadow/)
-
-+ [Doc](https://kb1000fx.github.io/hexo-theme-meadow/doc/#/en/)
-  
++ [Demo](https://kb1000fx.github.io/)
++ [Doc](https://kb1000fx.github.io/hexo-theme-meadow/doc/#/en/)  
 + [中文文档](https://kb1000fx.github.io/hexo-theme-meadow/doc/#/)
 
 If you have any question, please post a Github Issue or contact me with kb1000fx@gmail.com.
