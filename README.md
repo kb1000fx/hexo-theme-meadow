@@ -1,4 +1,4 @@
-# Meadow
+# Meadow简介
 
 ![Hexo](https://img.shields.io/badge/Hexo-3.0+-blue) 
 ![Node.JS](https://img.shields.io/badge/node.js-6.0-brightgreen)
@@ -17,4 +17,4 @@ Meadow是一款基于MDUI开发的，遵循Material Design的响应式Hexo主题
 
 如有任何问题请发Github Issue，或通过邮箱kb1000fx@gmail.com与我联系。
 
-我的另一个主题: [Insulin](https://github.com/kb1000fx/hexo-theme-insulin)
+我的另一个主题(还在施工中): [Insulin](https://github.com/kb1000fx/hexo-theme-insulin)
