@@ -1,2 +1,7 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+source/css/*.css linguist-vendored
+  
+layout/_adsense/* linguist-language=js
+layout/_plugin/* linguist-language=js
